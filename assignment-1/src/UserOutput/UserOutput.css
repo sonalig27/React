@@ -1,0 +1,7 @@
+strong {
+    color: blue;
+    border: 1px solid crimson;
+    padding: 2px;
+    margin: 2px;
+    border-radius: 10px;
+}

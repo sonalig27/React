@@ -1,0 +1,16 @@
+.Card {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1.2rem;
+  }
+  
+.Card button{
+    width: fit-content;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.1rem;
+  }

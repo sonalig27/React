@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+}
+
+.AppHeader{
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin: 20px 0;
+}
+
+.cardList {
+  width: 85vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns:1fr 1fr;
+  grid-gap: 20px;
+}
+
+@media (max-width: 700px) {
+  .cardList{
+    grid-template-columns:1fr;
+  }
+}
