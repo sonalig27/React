@@ -1,0 +1,38 @@
+.todos {
+  position: absolute;
+  top: 18rem;
+  width: 60%;
+  left: 20%;
+  color: #8a2b06;
+  font-size: 1.1rem;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo button {
+  background-color: #8a2b06;
+  /* height: 1.6rem; */
+  color: lightgray;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  /* opacity: 0.7; */
+  transition: transform 300ms ease-in;
+}
+
+.todo button:focus {
+  outline: none;
+}
+
+.todo button:hover {
+  background-color: #5a1a01;
+  color: white;
+  /* animation: bump 300ms ease-out; */
+  transform: scale(1.1);
+}
