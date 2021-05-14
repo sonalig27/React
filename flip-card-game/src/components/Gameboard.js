@@ -3,7 +3,8 @@ import Card from "./Card";
 import "./Gameboard.css";
 
 const Gameboard = (props) => {
-  const [cards, setCards] = useState(props.cards);
+  let cardsOnBoard = props.cards;
+  const [cards, setCards] = useState(cardsOnBoard);
   const [openCardChecker, setOpenCardChecker] = useState([]);
   const [checkCompleted, setCheckCompleted] = useState([]);
   const onCardClick = (card) => () => {
@@ -38,14 +39,14 @@ const Gameboard = (props) => {
   };
 
   useEffect(() => {
-    const newCards = cards.map((card) => ({
+    const newCards = cardsOnBoard.map((card) => ({
       ...card,
       flipped:
         openCardChecker.find((curr) => curr.id === card.id) ||
         checkCompleted.includes(card.type),
     }));
     setCards(newCards);
-  }, [cards, openCardChecker, checkCompleted]);
+  }, [cardsOnBoard, openCardChecker, checkCompleted]);
 
   return (
     <div className="Gameboard">

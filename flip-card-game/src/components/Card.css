@@ -10,4 +10,5 @@
 .Card img {
   width: 150px;
   height: 220px;
+  transition: transform 0.8s;
 }
