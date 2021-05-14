@@ -7,7 +7,7 @@ import ace_black from "./assets/AS.png";
 import three_red from "./assets/3D.png";
 import five_black from "./assets/5C.png";
 import seven_red from "./assets/7H.png";
-import { useState } from "react";
+// import { useState } from "react";
 // import nine_black from "./assets/9S.png";
 // import jack_red from "./assets/JD.png";
 
@@ -58,23 +58,22 @@ function shuffleCards(arr) {
 
 function App() {
   const cards = cardsOnBoard();
-  const [resetBoard, setResetBoard] = useState(false);
+  // const [resetBoard, setResetBoard] = useState(false);
 
-  const resetBoardHandler = () => {
-    setResetBoard(true);
-  };
+  // const resetBoardHandler = () => {
+  //   setResetBoard(true);
+  // };
 
-  if (resetBoard) {
-    shuffleCards(cards);
-    setResetBoard(false);
-  }
+  // if (resetBoard) {
+  //   shuffleCards(cards);
+  //   setResetBoard(false);
+  // }
   return (
     <div className="App">
       <header>
         <h1>Flip Card Game</h1>
-        <button onClick={resetBoardHandler}>Reset</button>
       </header>
-      <Gameboard cards={cards} />
+      <Gameboard cards={cards} shuffleCards={shuffleCards} />
     </div>
   );
 }

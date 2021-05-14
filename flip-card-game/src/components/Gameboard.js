@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { Fragment, useState, useEffect } from "react";
 import Card from "./Card";
 import "./Gameboard.css";
 
@@ -7,6 +7,19 @@ const Gameboard = (props) => {
   const [cards, setCards] = useState(cardsOnBoard);
   const [openCardChecker, setOpenCardChecker] = useState([]);
   const [checkCompleted, setCheckCompleted] = useState([]);
+  const [resetBoard, setResetBoard] = useState(false);
+
+  const resetBoardHandler = () => {
+    setResetBoard(true);
+  };
+
+  if (resetBoard) {
+    const newShuffledCards = props.shuffleCards(cardsOnBoard);
+    setResetBoard(false);
+    setOpenCardChecker([]);
+    setCheckCompleted([]);
+    setCards(newShuffledCards);
+  }
   const onCardClick = (card) => () => {
     if (
       checkerFull(openCardChecker) ||
@@ -49,11 +62,14 @@ const Gameboard = (props) => {
   }, [cardsOnBoard, openCardChecker, checkCompleted]);
 
   return (
-    <div className="Gameboard">
-      {cards.map((card) => (
-        <Card {...card} onClick={onCardClick(card)} key={card.id} />
-      ))}
-    </div>
+    <Fragment>
+      <button onClick={resetBoardHandler}>Reset</button>
+      <div className="Gameboard">
+        {cards.map((card) => (
+          <Card {...card} onClick={onCardClick(card)} key={card.id} />
+        ))}
+      </div>
+    </Fragment>
   );
 };
 
