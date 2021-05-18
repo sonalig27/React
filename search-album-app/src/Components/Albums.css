@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 80%;
+  margin-top: auto;
+}
+
+.albums {
+  opacity: 0;
+  transition: opacity 1s;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+/* .scroll-style {
+  background-color: var(--bg-color);
+  opacity: 1;
+  width: 100%;
+  color: #fff;
+  transition: transform 0.5s;
+} */

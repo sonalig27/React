@@ -1,0 +1,22 @@
+:root {
+  --bg-color: #00b4cc;
+}
+
+.App {
+  text-align: center;
+}
+.search-title {
+  font-size: x-large;
+  font-weight: 400;
+  text-align: center;
+  padding: 1rem;
+  margin: 0px 10px;
+  border-bottom: 1px solid var(--bg-color);
+}
+
+.search-header {
+  position: fixed;
+  top: 25%;
+  width: 100%;
+  margin: auto;
+}
